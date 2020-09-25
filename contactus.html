@@ -90,49 +90,50 @@
               <h3>Send us your Feedback</h3>
            </div>
             <div class="col-12 col-md-9">
-                <form>
+                <form method="get" action="#">
+                    <input id="website" name="website" type="text" value=""  />
                     <div class="form-group row">
                         <label for="firstname" class="col-md-3 col-form-label">First Name*</label>
                         <div class="col-md-11">
-                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="lastname" class="col-md-3 col-form-label">Last Name*</label>
                         <div class="col-md-11">
-                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="telnum" class="col-12 col-form-label">Telephone No.*</label>
                         <div class="col-5 col-md-3">
-                            <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code">
+                            <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code" required>
                         </div>
                         <div class="col-7 col-md-8">
-                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number">
+                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="emailid" class="col-md-3 col-form-label">Email*</label>
                         <div class="col-md-11">
-                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
+                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="confirmemailid" class="col-md-3 col-form-label">Confirm Email*</label>
                         <div class="col-md-11">
-                            <input type="email" class="form-control" id="confirmemailid" name="confirmemailid" placeholder="Confirm Email">
+                            <input type="email" class="form-control" id="confirmemailid" name="confirmemailid" placeholder="Confirm Email" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="feedback" class="col-md-3 col-form-label">Your Feedback*</label>
                         <div class="col-md-11">
-                            <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                            <textarea class="form-control" id="feedback" name="feedback" rows="12" required></textarea>
                         </div>
                     </div>
 
@@ -212,6 +213,15 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        /* Honeypot check */
+        $('form').submit(function(){    
+                if ($('input#website').val().length != 0) {
+                    return false;
+                } 
+        });
+    </script>
 </body>
 
 </html>
