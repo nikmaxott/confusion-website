@@ -38,6 +38,11 @@ body {
     background-color: #244c4e;
 }
 
+.card-header {
+    background-color: #244c4e;
+    color: floralwhite
+ }
+
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
     position: fixed;

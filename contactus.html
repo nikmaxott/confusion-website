@@ -222,6 +222,20 @@
                 } 
         });
     </script>
+
+    <script>
+        $('form').submit(function(){
+            if ($('input#emailid').val() != $('input#confirmemailid')){                
+                $('input#emailid').css("border-color", "2px solid rgba(255,0,0,5)");
+                $('input#emailid').css("box-shadow", "0 0 10px #ff0000");                        
+                $('input#emailid').css("border-color", "2px solid rgba(255,0,0,5)");        
+                $('input#confirmemailid').css("box-shadow", "0 0 10px #ff0000");
+                alert("Please enter matching emails")
+                return false
+                /* error msg here */
+            }
+        })
+    </script>
 </body>
 
 </html>
